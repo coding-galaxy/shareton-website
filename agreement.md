@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 # **Team Agreement**
 
 This agreement has been discussed by all of the group members, and is agreed upon by all members.
 
 **Group Members :**
+=======
+# _Team Agreement_
+
+This agreement has been discussed by all of the group members, and is agreed upon by all members.
+
+_Group Members :_
+
+>>>>>>> 75a1d772ae4f78072ed048c7fd0637388e9c3195
 1. Ibrahim Banat
 2. Esraa Aldawoud
 3. Mohammad Nofal
@@ -12,6 +21,7 @@ This agreement has been discussed by all of the group members, and is agreed upo
 
 This agreement has been discussed by all of the group members, and is agreed upon by all members.
 
+<<<<<<< HEAD
 
 ## **Conflict Plan**
 
@@ -64,3 +74,44 @@ We will  have PR for every task, three reviewers for the PR; the team leader and
 
 
 
+=======
+## _Conflict Plan_
+
+_What is the group process to resolve conflict, when it arises?_
+
+_For real life conflicts:_ the conflict will be reviewed by the team leader Ibrahim and Yasmeen, if the conflict was with one of the members and the team leader it will be reviewed by yasmeen. If any conflict wasn’t resolved by the previous procedures, we will turn to one of the TA’s to resolve the conflict.
+
+_How will you raise concerns to members who are not adequately contributing?_
+
+If any member didn’t contribute in an efficient manner, first the member will be notified/alerted privately by the team team leader, after that one of the TA’s will be informed.
+
+## _Communication Plan_
+
+_How will you communicate after hours and on the weekend?_
+
+We will Communicate in our slack group ,zoom meetings, and team viewers for coding problem code.
+
+_What is your strategy for ensuring everyone’s voice is heard?_
+
+Everything in our slack channel, every member has the right to express themselves freely, and share their thoughts. If any member has a problem that their voice is not being heard they can turn to Yasmeen or Ibrahim.
+
+_How will you ensure that you are creating a safe environment where everyone feels comfortable speaking up?_
+
+We will send private message from Yasmeen and Ibrahim to the team member
+
+## _Work Plan_
+
+_How will you identify tasks, assign tasks, know when they are complete, and manage work in general?_
+
+We will be using Trello as a project management tool, to assign tasks and to manage them.
+
+## _Git Process_
+
+_What components of your project will live on GitHub?_
+
+Our GitHub repository will contain wireframe , project files; including the HTML files, JS files, CSS files, README file which will have the project description ,this agreement as a md file.
+
+_Will you be using a PR review workflow?_
+
+We will have PR for every task, three reviewers for the PR; the team leader and the member who did the PR , and another one from the team who is available at the PR time .
+>>>>>>> 75a1d772ae4f78072ed048c7fd0637388e9c3195
