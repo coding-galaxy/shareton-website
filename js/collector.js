@@ -1,40 +1,19 @@
 'use strict';
 
 let table = document.getElementById('food');
-//table.addEventListener('click',move());
-//table.addEventListener( 'click', removeItemFromTable('food') );
 
-let table2 = document.getElementById('clothes');
-//table2.addEventListener( 'click', removeItemFromTable('clothes') );
-
-let table3 = document.getElementById('shelter');
-//table3.addEventListener( 'click', removeItemFromTable('shelter') );
-
-// let a = [];
-// let b = [];
-// let c = [];
 let food = [];
 let clothes = [];
 let shelter = [];
-
+let foodItems = [];
+let foodReserved = [];
 function load() {
   console.log(JSON.parse(localStorage.getItem('food')));
-  let foodItems = JSON.parse(localStorage.getItem('food')) || [];
+  foodItems = JSON.parse(localStorage.getItem('food')) || [];
   for (let i = 0; i < foodItems.length; i++) {
-    food.push(
-      foodItems[i]
-      // foodItems[i].adress,
-      // foodItems[i].phone,
-      // foodItems[i].type,
-      // foodItems[i].qty,
-      // foodItems[i].comment
-    );
+    food.push(foodItems[i]);
     console.log(food);
-    // console.log(foodItems[1].name);
   }
-  // a.push(food);
-  // console.log(food1);
-  // console.log(a);
 
   let clothesItems = JSON.parse(localStorage.getItem('clothes')) || [];
   for (let i = 0; i < clothesItems.length; i++) {
@@ -51,33 +30,13 @@ function load() {
 }
 load();
 
-// Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
-// function render() {
-//   load();
-//   // clear();
-//   showFood();
-//   showClothes();
-//   showShelter();
-// }
-
-// function clearTable() {
-//   tableBody.innerHTML = '';
-// }
-
-// let tableBody = document.createElement('tbody');
-
-// function move(element) {
-//   let tableRes = document.getElementById('reserved');
-//   let row = element.parentElement.parentElement;
-//   console.log(row);
-//   tableRes.appendChild(row);
-
-// }
 const tableFood = document.getElementById('foodTable');
 
 function showFood() {
   // tableFood.appendChild(tableBody);
   // for(let j=0;j<a.length;j++){
+
+  tableFood.textContent = '';
   for (let i = 0; i < food.length; i++) {
     let tableRow = document.createElement('tr');
     tableFood.appendChild(tableRow);
@@ -107,6 +66,11 @@ function showFood() {
     tableRow.appendChild(tableD6);
     tableD6.textContent = food[i].comment;
 
+    let tableD7 = document.createElement('td');
+    tableRow.appendChild(tableD7);
+
+    tableD7.innerHTML = `<a class="delete" id="${i}">+</a>`;
+
     // let btn = document.createElement('td');
     // btn.innerHTML =
     //   '<button id="' +
@@ -117,8 +81,50 @@ function showFood() {
     // row.appendChild(btn);
   }
 }
-showFood();
 
+const food_reserve = document.getElementById('foodReserve');
+
+function foodReserve() {
+  // tableFood.appendChild(tableBody);
+  // for(let j=0;j<a.length;j++){
+  if (localStorage.foodReserved) {
+    foodReserved = JSON.parse(localStorage.getItem('foodReserved'));
+
+    food_reserve.textContent = '';
+    for (let i = 0; i < foodReserved.length; i++) {
+      let tableRow = document.createElement('tr');
+      food_reserve.appendChild(tableRow);
+      let tableD = document.createElement('td');
+
+      // console.log(food);
+      tableRow.appendChild(tableD);
+      tableD.textContent = foodReserved[i].name;
+
+      let tableD2 = document.createElement('td');
+      tableRow.appendChild(tableD2);
+      tableD2.textContent = foodReserved[i].adress;
+
+      let tableD3 = document.createElement('td');
+      tableRow.appendChild(tableD3);
+      tableD3.textContent = foodReserved[i].phone;
+
+      let tableD4 = document.createElement('td');
+      tableRow.appendChild(tableD4);
+      tableD4.textContent = foodReserved[i].type;
+
+      let tableD5 = document.createElement('td');
+      tableRow.appendChild(tableD5);
+      tableD5.textContent = foodReserved[i].qty;
+
+      let tableD6 = document.createElement('td');
+      tableRow.appendChild(tableD6);
+      tableD6.textContent = foodReserved[i].comment;
+    }
+  }
+}
+
+showFood();
+foodReserve();
 const tableClothes = document.getElementById('clothesTable');
 
 function showClothes() {
@@ -157,6 +163,10 @@ function showClothes() {
     let tableD7 = document.createElement('td');
     tableRow.appendChild(tableD7);
     tableD7.textContent = clothes[i].comment;
+
+    let tableD8 = document.createElement('td');
+    tableRow.appendChild(tableD8);
+    tableD8.innerHTML = `<a class="delete" id="${i}">+</a>`;
   }
 }
 showClothes();
@@ -192,77 +202,35 @@ function showShelter() {
     let tableD7 = document.createElement('td');
     tableRow.appendChild(tableD7);
     tableD7.textContent = shelter[i].comment;
+
+    let tableD8 = document.createElement('td');
+    tableRow.appendChild(tableD8);
+    tableD8.innerHTML = `<a class="delete" id="${i}">+</a>`;
   }
 }
-// table3.appendChild(tableBody);
-
-// for (let i = 0; i < shelter.length; i++) {
-//   let row = document.createElement('tr');
-
-//   const tableData1 = document.createElement('td');
-//   row.appendChild(tableData1);
-//   const tableIndex = document.createElement('td');
-//   tableIndex.id = shelter[i].name;
-//   tableData1.appendChild(tableIndex);
-//   tableIndex.textContent = 'select';
-
-//   let title = document.createElement('td');
-//   title.textContent = shelter[i].name;
-//   row.appendChild(title);
-
-//   let adress = document.createElement('td');
-//   adress.textContent = shelter[i].adress;
-//   row.appendChild(adress);
-
-//   let phoneNumber = document.createElement('td');
-//   phoneNumber.textContent = shelter[i].phone;
-//   row.appendChild(phoneNumber);
-
-//   let Type = document.createElement('td');
-//   Type.textContent = shelter[i].type;
-//   row.appendChild(Type);
-
-//   let quantity = document.createElement('td');
-//   quantity.textContent = shelter[i].qty;
-//   row.appendChild(quantity);
-
-//   let comments = document.createElement('td');
-//   comments.textContent = shelter[i].comment;
-//   row.appendChild(comments);
-
-//   table3.appendChild(row);
 
 showShelter();
-// table.addEventListener('click', function (event){
-//   console.log(event.target);
-//   food.splice(event.target.id,1);
-//   localStorage.setItem('food',JSON.stringify(food));
-//   console.log(food);
-//   showFood();
 
-// });
+function transferItem(event) {
+  foodReserved.push(food[event.target.id]);
 
-// function removeItemFromTable( event ) {
+  console.log('ffff', foodReserved);
 
-//   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-//   // TODO: Save the cart back to local storage
-//   // TODO: Re-draw the cart table
+  food.splice(event.target.id, 1);
+  foodItems.splice(event.target.id, 1);
+  localStorage.setItem('food', JSON.stringify(food));
+  localStorage.setItem('foodReserved', JSON.stringify(foodReserved));
+  showFood();
+  foodReserve();
+  // if (event.target.matches('.delete')) {
+  //   foodReserved = food.map(function (data) {
+  //     if (event.target.id === 0) return data;
+  //     else return '';
+  //   });
+  // }
+}
 
-//   let deleteItem = event.target.id;
-//   let newItemArr = [];
-//   for ( let i = 0; i < cart.items.length; i++ ) {
-//     if ( cart.items[i].product !== deleteItem ) {
-//       newItemArr.push( cart.items[i] );
-//     }
-//   }
-//   localStorage.setItem( 'cart', JSON.stringify( newItemArr ) );
-//   clearCart();
-//   showCart();
-//   location.reload();
-
-// }
-
-// render();
+tableFood.addEventListener('click', transferItem);
 
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
