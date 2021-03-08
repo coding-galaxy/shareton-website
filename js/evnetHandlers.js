@@ -48,6 +48,7 @@ shelterForm.addEventListener('submit', function (event) {
 
   shelterForm.reset();
 });
+
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName('tabcontent');
