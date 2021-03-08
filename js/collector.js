@@ -2,12 +2,16 @@
 let table = document.getElementById('food');
 const clothes_reserve = document.getElementById('clothesReserve');
 const shelter_reserve = document.getElementById('shelterReserve');
+
 const tableShelter = document.getElementById('shelterTable');
+
 let food = [];
 let clothes = [];
 let shelter = [];
 let foodItems = [];
+
 let shelterItems = [];
+
 let foodReserved = [];
 let shelterReserved = [];
 let clothesReserved = [];
@@ -19,12 +23,14 @@ function load() {
     food.push(foodItems[i]);
     console.log(food);
   }
+
   clothesItems = JSON.parse(localStorage.getItem('clothes')) || [];
   for (let i = 0; i < clothesItems.length; i++) {
     clothes.push(clothesItems[i]);
     console.log(clothesItems);
     // b.push(clothes1);
   }
+
   shelterItems = JSON.parse(localStorage.getItem('shelter')) || [];
   for (let i = 0; i < shelterItems.length; i++) {
     shelter.push(shelterItems[i]);
@@ -135,6 +141,7 @@ function showClothes() {
 }
 showClothes();
 clothesReserve();
+
 function transferItem(event) {
   foodReserved.push(food[event.target.id]);
   console.log('ffff', foodReserved);
@@ -145,6 +152,7 @@ function transferItem(event) {
   showFood();
   foodReserve();
 }
+
 tableFood.addEventListener('click', transferItem);
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
@@ -155,6 +163,7 @@ function openTab(evt, tabName) {
   tablinks = document.getElementsByClassName('tablinks');
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(' active', '');
+
   }
   document.querySelector(`#${tabName}`).style.display = 'block';
   evt.currentTarget.className += ' active';
@@ -256,6 +265,7 @@ function shelterReserve() {
     }
   }
 }
+
 function transferclothes(event) {
   clothesReserved.push(clothes[event.target.id]);
   console.log('ffff', clothesReserved);
@@ -266,6 +276,7 @@ function transferclothes(event) {
   showClothes();
   clothesReserve();
 }
+
 tableClothes.addEventListener('click', transferclothes);
 function transfershelter(event) {
   shelterReserved.push(shelter[event.target.id]);
@@ -279,3 +290,4 @@ function transfershelter(event) {
 }
 tableShelter.addEventListener('click', transfershelter);
 // table.addEventListener('click', openTab);
+
