@@ -1,14 +1,17 @@
 'use strict';
-
 let table = document.getElementById('food');
 const clothes_reserve = document.getElementById('clothesReserve');
 const shelter_reserve = document.getElementById('shelterReserve');
+
 const tableShelter = document.getElementById('shelterTable');
+
 let food = [];
 let clothes = [];
 let shelter = [];
 let foodItems = [];
+
 let shelterItems = [];
+
 let foodReserved = [];
 let shelterReserved = [];
 let clothesReserved = [];
@@ -136,6 +139,7 @@ function showClothes() {
 }
 showClothes();
 clothesReserve();
+
 function transferItem(event) {
   foodReserved.push(food[event.target.id]);
   console.log('ffff', foodReserved);
@@ -156,6 +160,7 @@ function openTab(evt, tabName) {
   tablinks = document.getElementsByClassName('tablinks');
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(' active', '');
+
   }
   document.querySelector(`#${tabName}`).style.display = 'block';
   evt.currentTarget.className += ' active';
@@ -257,6 +262,7 @@ function shelterReserve() {
     }
   }
 }
+
 function transferclothes(event) {
   clothesReserved.push(clothes[event.target.id]);
   console.log('ffff', clothesReserved);
@@ -267,6 +273,7 @@ function transferclothes(event) {
   showClothes();
   clothesReserve();
 }
+
 tableClothes.addEventListener('click', transferclothes);
 function transfershelter(event) {
   shelterReserved.push(shelter[event.target.id]);
@@ -279,4 +286,6 @@ function transfershelter(event) {
   shelterReserve();
 }
 tableShelter.addEventListener('click', transfershelter);
+
 // table.addEventListener('click', openTab);
+
