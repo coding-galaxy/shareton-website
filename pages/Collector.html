@@ -8,15 +8,33 @@
     <link rel="stylesheet" href="/css/collect.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <nav id="navbar">
+            <div>
+                <!-- <img src="" id="logo" /> -->
+                <h1>Shareton</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Donate</a>
+                </li>
+                <li>
+                    <a href="#">Collect</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <div id="collectorNav" class="tab">
             <button class="tablinks" onclick="openTab(event, 'food')">Food</button>
             <button class="tablinks" onclick="openTab(event, 'clothes')">Clothes</button>
             <button class="tablinks" onclick="openTab(event, 'shelter')">Shelter</button>
+            <p>Please choose what you want to collect, and always make sure to pay it forward.
+            </p>
         </div>
-<p>Please choose what you want to collect, and always make sure to pay it forward.
-</p>
         <div id="food" class="tabcontent">
             <table >
                 <tr>
@@ -144,8 +162,35 @@
         </table>
         </div> -->
     </main>
-    <footer></footer>
-    
+    <footer>
+        <div class="parent">
+            <div class="div2">
+                <h2>Say hello</h2>
+                <p>if you are intrested in working with us or just want to say hello simply drop us a line!
+                <h4>contact@sharetin.com</h4>
+                </p>
+            </div>
+            <div class="div3">
+                <h2>subscribe us</h2>
+                <div class="social__links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <form action="" id="bottom__form">
+                    <input type="text" placeholder="YOUR EMAIL">
+                    <button>SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Shareton &copy; 2021. all rights reserved</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/c6a4f38983.js" crossorigin="anonymous"></script>
     <script src="/js/collector.js"></script>
 </body>
 </html>
