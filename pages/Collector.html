@@ -5,18 +5,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="/css/reset.css"> -->
+    <link rel="stylesheet" href="/css/collect.css">
 </head>
 
 <body>
     <header></header>
     <main>
-        <button class="food">FOOD</button>
-        <button class="cloth">CLOTHE</button>
-        <button class="chelter">SHELTER</button>
-        <ul id="items"></ul>
-        <ul id="reserved"></ul>
+        <div id="collectorNav" class="tab">
+            <button class="tablinks" onclick="openTab(event, 'food')">Food</button>
+            <button class="tablinks" onclick="openTab(event, 'clothes')">Clothes</button>
+            <button class="tablinks" onclick="openTab(event, 'shelter')">Shelter</button>
+        </div>
+
+<p>Please choose what you want to collect, and always make sure to pay it forward. 
+</p>
+
+        <div id="food" class="tabcontent">
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>food Type</th>
+                    <th>quantity</th>
+                    <th>comments</th>
+                    <th>reserve</th>
+                </tr>
+                <tbody id="foodTable">
+
+                </tbody>
+            </table>
+
+            <br/>
+            <br/>
+            <br/>
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>food Type</th>
+                    <th>quantity</th>
+                    <th>comments</th>
+                    
+                </tr>
+                <tbody id="foodReserve">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="clothes" class="tabcontent">
+
+            <table id="clothesTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>gender</th>
+                    <th>season</th>
+                    <th>quantinty</th>
+                    <th>comments</th>
+                    <th>reserve</th>
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="shelter" class="tabcontent">
+
+            <table id="shelterTable">
+                <tr>
+                    <th>name</th>
+                    <th>address</th>
+                    <th>phone number</th>
+                    <th>Type</th>
+                    <th>quantity</th>
+                    <th>comments</th>
+                    <th>reserve</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- <img src="/images/food.jpg" alt="" class="collectorImg">
+            <h3>Food</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> -->
+
+        </div>
+
+        <!-- <div id="clothes" class="tabcontent">
+            <img src="/images/clothes.jpg" alt="" class="collectorImg">
+            <h3>Clothes</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+
+        <div id="shelter" class="tabcontent">
+            <img src="/images/home.jpg" alt="" class="collectorImg">
+            <h3>Shelter</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div> -->
+        <!-- <div>
+          <h2>
+            reserved
+          </h2>
+          <table >
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>food Type</th>
+                <th>quantity</th>
+                <th>comments</th>
+                <th>reserve</th>
+            </tr>
+            <tbody id="foodTable">
+    
+            </tbody>
+        </table>
+        </div> -->
+
     </main>
+    
     <footer></footer>
+    <script src="/js/test1.js"></script>
+    <script src="/js/collector.js"></script>
 </body>
 
 </html>
