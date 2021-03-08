@@ -1,161 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/donate.css">
 </head>
-
 <body>
     <header>
-        <ul>
-            <li>
-                <img src="" Id='logo'>
-            </li>
-            <li>
-                <a href="pindex.html">
-                    <h1>Shareton</h1>
-                </a>
-            </li>
-        </ul>
-        <nav>
+        <nav id="navbar">
+            <div>
+                <!-- <img src="" id="logo" /> -->
+                <h1>Shareton</h1>
+            </div>
             <ul>
                 <li>
-                    <a href="donate.html">Donate</a>
+                    <a href="#">Donate</a>
                 </li>
                 <li>
-
-                    <a href="">Collect</a>
+                    <a href="#">Collect</a>
                 </li>
                 <li>
-
-                    <a href="">About Us</a>
+                    <a href="#">About Us</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class= 'formsName'>
-            <div>
-                <ul>
-                    <li>Donate Food</li>
-                    <li>Donate Clothes</li>
-                    <li>Donate Shelter</li>
-                </ul>
-            </div>
-            <section>
+        <!-- <section>
+            <h3>Give back to the community and choose what you want to donate
+            </h3>
+        </section> -->
+        <section class='formsName'>
+            <div class="tab">
                 <h3>Give back to the community and choose what you want to donate
                 </h3>
-            </section>
-            <section class= 'foodForm'>
-                <div class= 'form1'>
-                    <form id='foodDonation'>
-                        <fieldset>
-                            <legend>For Food Donations</legend>
-                            <label>Full Name</label>
-                            <input type="text" id= 'name'>
-                            <label>Address</label>
-                            <input type="text"  id="address">
-                            <label>Phone Number</label>
-                            <input type="number" id='phoneNumber'>
-                            <label>
-                                <span>Food Type</span>
-                                <select id="type">
-                                    <option value="Raw Food">Raw Food</option>
-                                    <option value="Cooked Food">Cooked Food</option>
-                                </select>
-                            <label>Quantity</label>
-                            <input type="number" id='qty' min='0'>
-                            <label>Comments</label>
-                            <input type="text" id="comments">
-                            </label>
-                            <input type="submit" value="Submit">
-                        </fieldset>
-                    </form>
-                   
-                </div>
-
-            </section>
-            <section class= 'clothesForm'>
-                <div class= 'form2'>
-                    <form id='clothesDonation'>
-                        <fieldset>
-                            <legend>For Clothes Donations</legend>
-                            <label>Full Name</label>
-                            <input type="text" id= 'name'>
-                            <label>Address</label>
-                            <input type="text"  id="address">
-                            <label>Phone Number</label>
-                            <input type="number" id='phoneNumber'>
-                            <label>
-                                <span>For Who</span>
-                                <select id="gender">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Kids">Kids</option>
-                                </select>
-                                <label>
-                                    <span>For Which Season</span>
-                                    <select id="season">
-                                        <option value="Winter">Winter</option>
-                                        <option value="Summer">Summer</option>
-                                        <option value="Mix">Mix</option>
-                                    </select>
-                            <label>Quantity</label>
-                            <input type="number" id='qty' min='0'>
-                            <label>Comments</label>
-                            <input type="text" id="comments">
-                            </label>
-                            <input type="submit" value="Submit">
-
-                        </fieldset>
-                    </form>
-                   
-                </div>
-
-            </section>
-            <section class= 'shelterForm'>
-                <div class= 'form3'>
-                    <form id='shelterDonation'>
-                        <fieldset>
-                            <legend>For shelter Donations</legend>
-                            <label>Full Name</label>
-                            <input type="text" id= 'name'>
-                            <label>Address</label>
-                            <input type="text"  id="address">
-                            <label>Phone Number</label>
-                            <input type="number" id='phoneNumber'>
-    
+                <button class="tablinks" onclick="openTab(event, 'food')">Donate Food</button>
+                <button class="tablinks" onclick="openTab(event, 'clothes')">Donate Clothes</button>
+                <button class="tablinks" onclick="openTab(event, 'shelter')">Donate Shelter</button>
+            </div>
+            <div id="food" class="tabcontent">
+                <section class='foodForm'>
+                    <img src="../assets/foood.jpg" alt="">
+                    <div class='form1'>
+                        <form id='foodDonation'>
+                            <fieldset>
+                                <legend>For Food Donations</legend>
+                                <div class='nameDiv'>
+                                    <label>Full Name</label>
+                                    <input type="text" id='name'>
+                                </div>
+                                <br>
+                                <div class='adressDiv'>
+                                    <label>Address</label>
+                                    <input type="text" id="address">
+                                </div>
+                                <br>
+                                <div class='phoneDiv'>
+                                    <label>Phone Number</label>
+                                    <input type="number" id='phoneNumber'>
+                                </div>
+                                <br>
+                                <div class='tybeDiv'>
+                                    <label>
+                                        <span>Food Type</span>
+                                        <select id="type">
+                                            <option value="Raw Food">Raw Food</option>
+                                            <option value="Cooked Food">Cooked Food</option>
+                                        </select>
+                                </div>
+                                <br>
+                                <div class='quantityDiv'>
+                                    <label>Quantity</label>
+                                    <input type="number" id='qty' min='0'>
+                                </div>
+                                <br>
+                                <div class='commentDiv'>
+                                    <label>Comments</label>
+                                    <input type="text" id="comments">
+                                </div>
+                                <br>
+                                <div>
+                                    </label>
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </fieldset>
+                        </form>
+                        <img src="../assets/amprella.jpeg" alt="">
+                    </div>
+                </section>
+            </div>
+            <div id="clothes" class="tabcontent">
+                <section class='clothesForm'>
+                    <img src="../assets/clothes.jpg" alt="">
+                    <div class='form2'>
+                        <form id='clothesDonation'>
+                            <fieldset>
+                                <legend>For Clothes Donations</legend>
+                                <div>
+                                    <label>Full Name</label>
+                                    <input type="text" id='name'>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Address</label>
+                                    <input type="text" id="address">
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Phone Number</label>
+                                    <input type="number" id='phoneNumber'>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>
+                                        <span>For Who</span>
+                                        <select id="gender">
+                                            <option value="">Male</option>
+                                            <option value="">Female</option>
+                                            <option value="">Kids</option>
+                                        </select>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>
+                                        <span>For Which Season</span>
+                                        <select id="season">
+                                            <option value="">Winter</option>
+                                            <option value="">Summer</option>
+                                            <option value="">Mix</option>
+                                        </select>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Quantity</label>
+                                    <input type="number" id='qty' min='0'>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Comments</label>
+                                    <input type="text" id="comments">
+                                </div>
+                                <br>
+                                </label>
+                                <input type="submit" value="Submit">
+                            </fieldset>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div id="shelter" class="tabcontent">
+                <section class='shelterForm'>
+                    <img src="../assets/home.jpg" alt="">
+                    <div class='form3'>
+                        <form id='shelterDonation'>
+                            <fieldset>
+                                <legend>For shelter Donations</legend>
+                                <div>
+                                    <label>Full Name</label>
+                                    <input type="text" id='name'>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Address</label>
+                                    <input type="text" id="address">
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Phone Number</label>
+                                    <input type="number" id='phoneNumber'>
+                                </div>
+                                <br>
+                                <div>
                                     <span>Shelter Type</span>
                                     <select id="shelter">
                                         <option value="Room">Room</option>
                                         <option value="Apartment">Apartment</option>
                                         <option value="Part of a Room">Part of a Room</option>
                                     </select>
-                            <label>Quantity</label>
-                            <input type="number" id='qty' min='0'>
-                            <label>Comments</label>
-                            <input type="text" id="comments">
-                            </label>
-                            <input type="submit" value="Submit">
-                        </fieldset>
-                    </form>
-                   
-                </div>
-
-            </section>
-
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Quantity</label>
+                                    <input type="number" id='qty' min='0'>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Comments</label>
+                                    <input type="text" id="comments">
+                                </div>
+                                <br>
+                                <div>
+                                    </label>
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            </div>
         </section>
     </main>
     <footer>
-    
+        <div class="parent">
+            <div class="div2">
+                <h2>Say hello</h2>
+                <p>
+                    if you are intrested in working with us or just want to say hello simply drop us a line!
+                <h4>contact@sharetin.com</h4>
+                </p>
+            </div>
+            <div class="div3">
+                <h2>subscribe us</h2>
+                <div class="social__links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <form action="" id="bottom__form">
+                    <input type="text" placeholder="YOUR EMAIL">
+                    <button>SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Shareton &copy; 2021. all rights reserved</p>
+        </div>
     </footer>
+    <script src="https://kit.fontawesome.com/c6a4f38983.js" crossorigin="anonymous"></script>
+    <!-- <script src="../js/donate.js"></script> -->
     <script src="../js/donateConstructors.js"></script>
-<script src="../js/evnetHandlers.js"></script>
-
+    <script src="../js/evnetHandlers.js"></script>
 </body>
-
-
 </html>
