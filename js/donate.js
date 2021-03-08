@@ -2,7 +2,7 @@
 
 /* TODO:
 
-1. initialise 3 constrcoutrs for each from 
+1. initialise 3 constrcoutrs for each from
 2. get the data from the forms to the constructer attributes and then to an aary
 3. from the array the data should go to the local storage
 
@@ -10,7 +10,7 @@
 // getting from elements
 let foodForm = document.getElementById('foodDonation');
 let foodAll = [];
-
+console.log('i exsist');
 let clothesForm = document.getElementById('clothesDonation');
 let clothesAll = [];
 
