@@ -23,14 +23,12 @@ function load() {
     food.push(foodItems[i]);
     console.log(food);
   }
-
   clothesItems = JSON.parse(localStorage.getItem('clothes')) || [];
   for (let i = 0; i < clothesItems.length; i++) {
     clothes.push(clothesItems[i]);
     console.log(clothesItems);
     // b.push(clothes1);
   }
-
   shelterItems = JSON.parse(localStorage.getItem('shelter')) || [];
   for (let i = 0; i < shelterItems.length; i++) {
     shelter.push(shelterItems[i]);
@@ -152,7 +150,6 @@ function transferItem(event) {
   showFood();
   foodReserve();
 }
-
 tableFood.addEventListener('click', transferItem);
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
@@ -289,5 +286,6 @@ function transfershelter(event) {
   shelterReserve();
 }
 tableShelter.addEventListener('click', transfershelter);
+
 // table.addEventListener('click', openTab);
 
