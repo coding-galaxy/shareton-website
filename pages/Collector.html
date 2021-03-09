@@ -1,22 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="/css/reset.css"> -->
+    <link rel="stylesheet" href="/css/collect.css">
 </head>
-
 <body>
-    <header></header>
+    <header>
+        <nav id="navbar">
+            <div>
+                <!-- <img src="" id="logo" /> -->
+                <h1>Shareton</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Donate</a>
+                </li>
+                <li>
+                    <a href="#">Collect</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <button class="food">FOOD</button>
-        <button class="cloth">CLOTHE</button>
-        <button class="chelter">SHELTER</button>
-        <ul id="items"></ul>
-        <ul id="reserved"></ul>
-    </main>
-    <footer></footer>
-</body>
+        <div id="collectorNav" class="tab">
+            <button class="tablinks" onclick="openTab(event, 'food')">Food</button>
+            <button class="tablinks" onclick="openTab(event, 'clothes')">Clothes</button>
+            <button class="tablinks" onclick="openTab(event, 'shelter')">Shelter</button>
+            <p>Please choose what you want to collect, and always make sure to pay it forward.
+            </p>
+        </div>
+        <div id="food" class="tabcontent">
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>food Type</th>
+                    <th>quantity</th>
+                    <th>comments</th>
+                    <th>reserve</th>
+                </tr>
+                <tbody id="foodTable">
+                </tbody>
+            </table>
+            <br/>
+            <br/>
+            <br/>
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>food Type</th>
+                    <th>quantity</th>
+                    <th>comments</th>
+                </tr>
+                <tbody id="foodReserve">
+                </tbody>
+            </table>
+        </div>
+        <div id="clothes" class="tabcontent">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>gender</th>
+                    <th>season</th>
+                    <th>quantinty</th>
+                    <th>comments</th>
+                    <th>reserve</th>
+                </tr>
+                <tbody id="clothesTable"></tbody>
+            </table>
+            <br/>
+            <br/>
+            <br/>
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>gender</th>
+                    <th>season</th>
+                    <th>quantinty</th>
+                    <th>comments</th>
 
+                </tr>
+                <tbody id="clothesReserve">
+
+                </tbody>
+            </table>
+        </div>
+        <div id="shelter" class="tabcontent">
+
+            <table>
+                <tr>
+                    <th>name</th>
+                    <th>address</th>
+                    <th>phone number</th>
+                    <th>Type</th>
+                    <th>quantity</th>
+                    <th>comments</th>
+                    <th>reserve</th>
+                </tr>
+                <tbody id="shelterTable"></tbody>
+            </table>
+            <br/>
+            <br/>
+            <br/>
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>food Type</th>
+                    <th>quantity</th>
+                    <th>comments</th>
+
+                </tr>
+                <tbody id="shelterReserve">
+                </tbody>
+            </table>
+        </div>
+        <!-- <img src="/images/food.jpg" alt="" class="collectorImg">
+            <h3>Food</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> -->
+        </div>
+        <!-- <div id="clothes" class="tabcontent">
+            <img src="/images/clothes.jpg" alt="" class="collectorImg">
+            <h3>Clothes</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+        <div id="shelter" class="tabcontent">
+            <img src="/images/home.jpg" alt="" class="collectorImg">
+            <h3>Shelter</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div> -->
+        <!-- <div>
+          <h2>
+            reserved
+          </h2>
+          <table >
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>food Type</th>
+                <th>quantity</th>
+                <th>comments</th>
+                <th>reserve</th>
+            </tr>
+            <tbody id="foodTable">
+            </tbody>
+        </table>
+        </div> -->
+    </main>
+    <footer>
+        <div class="parent">
+            <div class="div2">
+                <h2>Say hello</h2>
+                <p>if you are intrested in working with us or just want to say hello simply drop us a line!
+                <h4>contact@sharetin.com</h4>
+                </p>
+            </div>
+            <div class="div3">
+                <h2>subscribe us</h2>
+                <div class="social__links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <form action="" id="bottom__form">
+                    <input type="text" placeholder="YOUR EMAIL">
+                    <button>SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Shareton &copy; 2021. all rights reserved</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/c6a4f38983.js" crossorigin="anonymous"></script>
+    <script src="/js/collector.js"></script>
+</body>
 </html>

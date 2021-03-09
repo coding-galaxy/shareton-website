@@ -1,255 +1,157 @@
 'use strict';
+let table = document.getElementById('food');
+const clothes_reserve = document.getElementById('clothesReserve');
+const shelter_reserve = document.getElementById('shelterReserve');
 
-let table= document.getElementById('food');
-//table.addEventListener('click',move());
-//table.addEventListener( 'click', removeItemFromTable('food') );
+const tableShelter = document.getElementById('shelterTable');
 
-let table2= document.getElementById('clothes');
-//table2.addEventListener( 'click', removeItemFromTable('clothes') );
+let food = [];
+let clothes = [];
+let shelter = [];
+let foodItems = [];
 
-let table3= document.getElementById('shelter');
-//table3.addEventListener( 'click', removeItemFromTable('shelter') );
+let shelterItems = [];
 
-let a=[];
-let b=[];
-let c=[];
-let food1=[];
-let clothes1=[];
-let shelter1=[];
-
+let foodReserved = [];
+let shelterReserved = [];
+let clothesReserved = [];
+let clothesItems = [];
 function load() {
-
-  let foodItems = JSON.parse( localStorage.getItem( 'food' ) ) || [];
-  for(let i=0;i<foodItems.length;i++){
-    food1.push(foodItems[i].name,foodItems[i].adress,foodItems[i].phone,foodItems[i].type,foodItems[i].qty,foodItems[i].comment);
-  // console.log(foodItems[1].name);
+  console.log(JSON.parse(localStorage.getItem('food')));
+  foodItems = JSON.parse(localStorage.getItem('food')) || [];
+  for (let i = 0; i < foodItems.length; i++) {
+    food.push(foodItems[i]);
+    console.log(food);
   }
-  a.push(food1);
-  // console.log(food1);
-  // console.log(a);
-
-  let clothesItems = JSON.parse( localStorage.getItem( 'clothes' ) ) || [];
-  for(let i=0;i<clothesItems.length;i++){
-    clothes1.push(clothesItems[i].name,clothesItems[i].adress,clothesItems[i].phone,clothesItems[i].gender,clothesItems[i].season,clothesItems[i].qty,clothesItems[i].comment);
-    b.push(clothes1);
+  clothesItems = JSON.parse(localStorage.getItem('clothes')) || [];
+  for (let i = 0; i < clothesItems.length; i++) {
+    clothes.push(clothesItems[i]);
+    console.log(clothesItems);
+    // b.push(clothes1);
   }
-
-
-  let shelterItems = JSON.parse( localStorage.getItem( 'shelter' ) ) || [];
-  for(let i=0;i<shelterItems.length;i++){
-    shelter1.push(shelterItems[i].name,shelterItems[i].adress,shelterItems[i].phone,shelterItems[i].type,shelterItems[i].qty,shelterItems[i].comment);
-    c.push(shelter1);
+  shelterItems = JSON.parse(localStorage.getItem('shelter')) || [];
+  for (let i = 0; i < shelterItems.length; i++) {
+    shelter.push(shelterItems[i]);
+    // c.push(shelter1);
   }
-
-
 }
 load();
-
-
-// Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
-// function render() {
-//   load();
-//   // clear();
-//   showFood();
-//   showClothes();
-//   showShelter();
-// }
-
-// function clearTable() {
-//   tableBody.innerHTML = '';
-// }
-
-
-
-let tableBody = document.createElement( 'tbody' );
-
-// function move(element) {
-//   let tableRes = document.getElementById('reserved');
-//   let row = element.parentElement.parentElement;
-//   console.log(row);
-//   tableRes.appendChild(row);
-
-// }
-
-function showFood(){
-  table.appendChild(tableBody);
+const tableFood = document.getElementById('foodTable');
+function showFood() {
+  // tableFood.appendChild(tableBody);
   // for(let j=0;j<a.length;j++){
-  for (let i = 0; i < food1.length; i++) {
-    let row = document.createElement('tr');
-    tableBody.appendChild(row);
-
-    let btn = document.createElement('td');
-    btn.innerHTML ='<button id="'+i+'" data-index="'+i+'" onclick="move(this)">move row</button>';
-    row.appendChild(btn);
-
-    // const tableData1 = document.createElement( 'td' );
-    // row.appendChild( tableData1 );
-    // const tableIndex = document.createElement( 'td' );
-    // tableIndex.id = a[i].name;
-    // tableData1.appendChild( tableIndex );
-    // tableIndex.textContent = 'select';
-
-
-    let title = document.createElement('td');
-    title.textContent =food1[i];
-    row.appendChild(title);
-
-    let adress = document.createElement('td');
-    adress.textContent = food1[i];
-    row.appendChild(adress);
-
-    let phoneNumber = document.createElement('td');
-    phoneNumber.textContent = a[i].phone;
-    row.appendChild(phoneNumber);
-
-    let foodType = document.createElement('td');
-    foodType.textContent = a[i].type;
-    row.appendChild(foodType);
-
-    let quantity = document.createElement('td');
-    quantity.textContent = a[i].qty;
-    row.appendChild(quantity);
-
-    let comments = document.createElement('td');
-    comments.textContent = a[i].comment;
-    row.appendChild(comments);
-
-
-
-    table.appendChild(row);
-
+  tableFood.textContent = '';
+  for (let i = 0; i < food.length; i++) {
+    let tableRow = document.createElement('tr');
+    tableFood.appendChild(tableRow);
+    let tableD = document.createElement('td');
+    // console.log(food);
+    tableRow.appendChild(tableD);
+    tableD.textContent = food[i].name;
+    let tableD2 = document.createElement('td');
+    tableRow.appendChild(tableD2);
+    tableD2.textContent = food[i].adress;
+    let tableD3 = document.createElement('td');
+    tableRow.appendChild(tableD3);
+    tableD3.textContent = food[i].phone;
+    let tableD4 = document.createElement('td');
+    tableRow.appendChild(tableD4);
+    tableD4.textContent = food[i].type;
+    let tableD5 = document.createElement('td');
+    tableRow.appendChild(tableD5);
+    tableD5.textContent = food[i].qty;
+    let tableD6 = document.createElement('td');
+    tableRow.appendChild(tableD6);
+    tableD6.textContent = food[i].comment;
+    let tableD7 = document.createElement('td');
+    tableRow.appendChild(tableD7);
+    tableD7.innerHTML = `<a class="delete" id="${i}">+</a>`;
   }
-  // }
+}
+const food_reserve = document.getElementById('foodReserve');
+function foodReserve() {
+  // tableFood.appendChild(tableBody);
+  // for(let j=0;j<a.length;j++){
+  if (localStorage.foodReserved) {
+    foodReserved = JSON.parse(localStorage.getItem('foodReserved'));
+    food_reserve.textContent = '';
+    for (let i = 0; i < foodReserved.length; i++) {
+      let tableRow = document.createElement('tr');
+      food_reserve.appendChild(tableRow);
+      let tableD = document.createElement('td');
+      // console.log(food);
+      tableRow.appendChild(tableD);
+      tableD.textContent = foodReserved[i].name;
+      let tableD2 = document.createElement('td');
+      tableRow.appendChild(tableD2);
+      tableD2.textContent = foodReserved[i].adress;
+      let tableD3 = document.createElement('td');
+      tableRow.appendChild(tableD3);
+      tableD3.textContent = foodReserved[i].phone;
+      let tableD4 = document.createElement('td');
+      tableRow.appendChild(tableD4);
+      tableD4.textContent = foodReserved[i].type;
+      let tableD5 = document.createElement('td');
+      tableRow.appendChild(tableD5);
+      tableD5.textContent = foodReserved[i].qty;
+      let tableD6 = document.createElement('td');
+      tableRow.appendChild(tableD6);
+      tableD6.textContent = foodReserved[i].comment;
+    }
+  }
 }
 showFood();
-
-function showClothes(){
-  table2.appendChild(tableBody);
-
+foodReserve();
+const tableClothes = document.getElementById('clothesTable');
+function showClothes() {
+  // table2.appendChild(tableBody);
+  console.log(clothes);
+  tableClothes.textContent = '';
   for (let i = 0; i < clothes.length; i++) {
-    let row = document.createElement('tr');
-
-    const tableData1 = document.createElement( 'td' );
-    row.appendChild( tableData1 );
-    const tableIndex = document.createElement( 'td' );
-    tableIndex.id = clothes[i].name;
-    tableData1.appendChild( tableIndex );
-    tableIndex.textContent = 'select';
-
-    let title = document.createElement('td');
-    title.textContent = clothes[i].name;
-    row.appendChild(title);
-
-    let adress = document.createElement('td');
-    adress.textContent = clothes[i].adress;
-    row.appendChild(adress);
-
-    let phoneNumber = document.createElement('td');
-    phoneNumber.textContent = clothes[i].phone;
-    row.appendChild(phoneNumber);
-
-    let gender = document.createElement('td');
-    gender.textContent = clothes[i].gender;
-    row.appendChild(gender);
-
-
-    let season = document.createElement('td');
-    season.textContent = clothes[i].season;
-    row.appendChild(season);
-
-    let quantity = document.createElement('td');
-    quantity.textContent = clothes[i].qty;
-    row.appendChild(quantity);
-
-    let comments = document.createElement('td');
-    comments.textContent = clothes[i].comment;
-    row.appendChild(comments);
-
-
-    table2.appendChild(row);
-
+    let tableRow = document.createElement('tr');
+    tableClothes.appendChild(tableRow);
+    let tableD = document.createElement('td');
+    // console.log(food);
+    tableRow.appendChild(tableD);
+    tableD.textContent = clothes[i].name;
+    let tableD2 = document.createElement('td');
+    tableRow.appendChild(tableD2);
+    tableD2.textContent = clothes[i].adress;
+    let tableD3 = document.createElement('td');
+    tableRow.appendChild(tableD3);
+    tableD3.textContent = clothes[i].phone;
+    let tableD4 = document.createElement('td');
+    tableRow.appendChild(tableD4);
+    tableD4.textContent = clothes[i].gender;
+    let tableD5 = document.createElement('td');
+    tableRow.appendChild(tableD5);
+    tableD5.textContent = clothes[i].season;
+    let tableD6 = document.createElement('td');
+    tableRow.appendChild(tableD6);
+    tableD6.textContent = clothes[i].qty;
+    let tableD7 = document.createElement('td');
+    tableRow.appendChild(tableD7);
+    tableD7.textContent = clothes[i].comment;
+    let tableD8 = document.createElement('td');
+    tableRow.appendChild(tableD8);
+    tableD8.innerHTML = `<a class="delete" id="${i}">+</a>`;
   }
 }
+showClothes();
+clothesReserve();
 
-
-function showShelter(){
-  table3.appendChild(tableBody);
-
-  for (let i = 0; i < shelter.length ; i++) {
-    let row = document.createElement('tr');
-
-    const tableData1 = document.createElement( 'td' );
-    row.appendChild( tableData1 );
-    const tableIndex = document.createElement( 'td' );
-    tableIndex.id = shelter[i].name;
-    tableData1.appendChild( tableIndex );
-    tableIndex.textContent = 'select';
-
-    let title = document.createElement('td');
-    title.textContent = shelter[i].name;
-    row.appendChild(title);
-
-    let adress = document.createElement('td');
-    adress.textContent = shelter[i].adress;
-    row.appendChild(adress);
-
-    let phoneNumber = document.createElement('td');
-    phoneNumber.textContent = shelter[i].phone;
-    row.appendChild(phoneNumber);
-
-    let Type = document.createElement('td');
-    Type.textContent = shelter[i].type;
-    row.appendChild(Type);
-
-    let quantity = document.createElement('td');
-    quantity.textContent = shelter[i].qty;
-    row.appendChild(quantity);
-
-    let comments = document.createElement('td');
-    comments.textContent = shelter[i].comment;
-    row.appendChild(comments);
-
-
-    table3.appendChild(row);
-
-  }
+function transferItem(event) {
+  foodReserved.push(food[event.target.id]);
+  console.log('ffff', foodReserved);
+  food.splice(event.target.id, 1);
+  foodItems.splice(event.target.id, 1);
+  localStorage.setItem('food', JSON.stringify(food));
+  localStorage.setItem('foodReserved', JSON.stringify(foodReserved));
+  showFood();
+  foodReserve();
 }
-
-// table.addEventListener('click', function (event){
-//   console.log(event.target);
-//   food.splice(event.target.id,1);
-//   localStorage.setItem('food',JSON.stringify(food));
-//   console.log(food);
-//   showFood();
-
-// });
-
-
-
-// function removeItemFromTable( event ) {
-
-//   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-//   // TODO: Save the cart back to local storage
-//   // TODO: Re-draw the cart table
-
-//   let deleteItem = event.target.id;
-//   let newItemArr = [];
-//   for ( let i = 0; i < cart.items.length; i++ ) {
-//     if ( cart.items[i].product !== deleteItem ) {
-//       newItemArr.push( cart.items[i] );
-//     }
-//   }
-//   localStorage.setItem( 'cart', JSON.stringify( newItemArr ) );
-//   clearCart();
-//   showCart();
-//   location.reload();
-
-// }
-
-// render();
-
-
-function openTab (evt, tabName) {
+tableFood.addEventListener('click', transferItem);
+function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName('tabcontent');
   for (i = 0; i < tabcontent.length; i++) {
@@ -258,9 +160,132 @@ function openTab (evt, tabName) {
   tablinks = document.getElementsByClassName('tablinks');
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(' active', '');
+
   }
-  document.getElementById(tabName).style.display = 'block';
+  document.querySelector(`#${tabName}`).style.display = 'block';
   evt.currentTarget.className += ' active';
 }
+function clothesReserve() {
+  // tableFood.appendChild(tableBody);
+  // for(let j=0;j<a.length;j++){
+  if (localStorage.clothesReserved) {
+    clothesReserved = JSON.parse(localStorage.getItem('clothesReserved'));
+    clothes_reserve.textContent = '';
+    for (let i = 0; i < clothesReserved.length; i++) {
+      let tableRow = document.createElement('tr');
+      clothes_reserve.appendChild(tableRow);
+      let tableD = document.createElement('td');
+      // console.log(food);
+      tableRow.appendChild(tableD);
+      tableD.textContent = clothesReserved[i].name;
+      let tableD2 = document.createElement('td');
+      tableRow.appendChild(tableD2);
+      tableD2.textContent = clothesReserved[i].adress;
+      let tableD3 = document.createElement('td');
+      tableRow.appendChild(tableD3);
+      tableD3.textContent = clothesReserved[i].phone;
+      let tableD4 = document.createElement('td');
+      tableRow.appendChild(tableD4);
+      tableD4.textContent = clothesReserved[i].gender;
+      let tableD5 = document.createElement('td');
+      tableRow.appendChild(tableD5);
+      tableD5.textContent = clothesReserved[i].season;
+      let tableD6 = document.createElement('td');
+      tableRow.appendChild(tableD6);
+      tableD6.textContent = clothesReserved[i].qty;
+      let tableD7 = document.createElement('td');
+      tableRow.appendChild(tableD7);
+      tableD7.textContent = clothesReserved[i].comment;
+    }
+  }
+}
+function showShelter() {
+  tableShelter.textContent = '';
+  console.log(shelter);
+  for (let i = 0; i < shelter.length; i++) {
+    let tableRow = document.createElement('tr');
+    tableShelter.appendChild(tableRow);
+    let tableD = document.createElement('td');
+    // console.log(food);
+    tableRow.appendChild(tableD);
+    tableD.textContent = shelter[i].name;
+    let tableD2 = document.createElement('td');
+    tableRow.appendChild(tableD2);
+    tableD2.textContent = shelter[i].adress;
+    let tableD3 = document.createElement('td');
+    tableRow.appendChild(tableD3);
+    tableD3.textContent = shelter[i].phone;
+    let tableD4 = document.createElement('td');
+    tableRow.appendChild(tableD4);
+    tableD4.textContent = shelter[i].type;
+    let tableD5 = document.createElement('td');
+    tableRow.appendChild(tableD5);
+    tableD5.textContent = shelter[i].qty;
+    let tableD7 = document.createElement('td');
+    tableRow.appendChild(tableD7);
+    tableD7.textContent = shelter[i].comment;
+    let tableD8 = document.createElement('td');
+    tableRow.appendChild(tableD8);
+    tableD8.innerHTML = `<a class="delete" id="${i}">+</a>`;
+  }
+}
+showShelter();
+shelterReserve();
+function shelterReserve() {
+  // tableFood.appendChild(tableBody);
+  // for(let j=0;j<a.length;j++){
+  if (localStorage.shelterReserved) {
+    shelterReserved = JSON.parse(localStorage.getItem('shelterReserved'));
+    shelter_reserve.textContent = '';
+    for (let i = 0; i < shelterReserved.length; i++) {
+      let tableRow = document.createElement('tr');
+      shelter_reserve.appendChild(tableRow);
+      let tableD = document.createElement('td');
+      // console.log(food);
+      tableRow.appendChild(tableD);
+      tableD.textContent = shelterReserved[i].name;
+      let tableD2 = document.createElement('td');
+      tableRow.appendChild(tableD2);
+      tableD2.textContent = shelterReserved[i].adress;
+      let tableD3 = document.createElement('td');
+      tableRow.appendChild(tableD3);
+      tableD3.textContent = shelterReserved[i].phone;
+      let tableD4 = document.createElement('td');
+      tableRow.appendChild(tableD4);
+      tableD4.textContent = shelterReserved[i].type;
+      let tableD5 = document.createElement('td');
+      tableRow.appendChild(tableD5);
+      tableD5.textContent = shelterReserved[i].qty;
+      let tableD6 = document.createElement('td');
+      tableRow.appendChild(tableD6);
+      tableD6.textContent = shelterReserved[i].comment;
+    }
+  }
+}
 
-// table.addEventListener('click',openTab());
+function transferclothes(event) {
+  clothesReserved.push(clothes[event.target.id]);
+  console.log('ffff', clothesReserved);
+  clothes.splice(event.target.id, 1);
+  clothesItems.splice(event.target.id, 1);
+  localStorage.setItem('clothes', JSON.stringify(clothes));
+  localStorage.setItem('clothesReserved', JSON.stringify(clothesReserved));
+  showClothes();
+  clothesReserve();
+}
+
+tableClothes.addEventListener('click', transferclothes);
+function transfershelter(event) {
+  shelterReserved.push(shelter[event.target.id]);
+  console.log('ffff', shelterReserved);
+  shelter.splice(event.target.id, 1);
+  shelterItems.splice(event.target.id, 1);
+  localStorage.setItem('shelter', JSON.stringify(shelter));
+  localStorage.setItem('shelterReserved', JSON.stringify(shelterReserved));
+  showShelter();
+  shelterReserve();
+}
+tableShelter.addEventListener('click', transfershelter);
+
+// table.addEventListener('click', openTab);
+
