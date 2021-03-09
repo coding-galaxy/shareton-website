@@ -1,14 +1,19 @@
 'use strict';
 console.log(window.pageYOffset);
-const scrollButton = document.getElementById('scroll');
-const doSection = document.querySelector('.do__description');
+// const scrollButton = document.getElementById('scroll');
+const ourSection = document.querySelector('.grid-container');
+const navItem = document.querySelector('nav');
 
-scrollButton.addEventListener('click', function () {
-  doSection.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-    inline: 'start',
-  });
+const section1 = document.querySelector('.q');
+
+section1.addEventListener('click', function (event) {
+  if (event.target.matches('.arrow')) {
+    ourSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'start',
+    });
+  }
 });
 
 let startYOffset = window.pageYOffset;
@@ -18,10 +23,16 @@ window.onscroll = function () {
 
   if (startYOffset > currentYOffset) {
     document.getElementById('navbar').style.top = 0;
+    navItem.classList.add('scrolled');
   } else {
     document.getElementById('navbar').style.top = '-70px';
+    navItem.classList.remove('scrolled');
   }
   startYOffset = currentYOffset;
+
+  if (currentYOffset === 0) {
+    navItem.classList.remove('scrolled');
+  }
 };
 
 // function blurImage() {
