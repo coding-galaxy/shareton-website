@@ -170,8 +170,18 @@ section img {
     position: relative;
     left: 120px;
     top: 45px;
-    
+    animation:formPicture 1s  ;
 }
+@keyframes formPicture {
+	0% {
+		left: 300%;
+    }
+    30% {
+		right:80%;
+		animation-timing-function: ease-out;
+	}
+}
+
 main span{
     color: #333
 }
@@ -294,10 +304,30 @@ main label {
     color:#333;
 }
 
+/* fieldset {
+    padding: 30px 50px 30px 50px;
+    border: 5px double #40916c;
+} */
+
 fieldset {
     padding: 30px 50px 30px 50px;
     border: 5px double #40916c;
+    animation:form 1s  ;
 }
+
+@keyframes form {
+	0% {
+		right: 300%;
+		animation-timing-function: ease-in;
+	}
+
+	30% {
+		right:80%;
+		animation-timing-function: ease-out;
+	}
+
+}
+
 
 legend {
     padding: 0 15px;
