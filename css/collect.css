@@ -1,48 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Gafata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
-h2{
+h2 {
     font-family: 'Gafata', sans-serif;
 }
+
 * {
     box-sizing: border-box;
     text-transform: capitalize;
     font-family: 'Gafata', sans-serif;
-  }
-  header {
+}
+
+header {
     width: 100%;
     height: 100vh;
-    background-image: url('../assets/collect.jpg');
+    background-image: url('/assets/collect.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #74c69d;
-    /* font-family: 'Gafata', sans-serif; */
-  }
-  nav ul {
+}
+
+nav ul {
     display: flex;
-  }
-  main{
-      width: 960px;
-      margin: 0 auto;
-      font-family: 'Merriweather', serif;
-  }
-  nav ul li {
+}
+
+main {
+    width: 960px;
+    margin: 0 auto;
+    font-family: 'Merriweather', serif;
+}
+
+nav ul li {
     margin: 0 40px;
     text-decoration: none;
     list-style: none;
     color: #74c69d;
     font-family: 'Gafata', sans-serif;
+}
 
-  }
-  nav ul li a {
+nav ul li a {
     text-decoration: none;
     color: #74c69d;
-  }
-  nav ul li a:visited {
+}
+
+nav ul li a:visited {
     text-decoration: none;
     color: #74c69d;
-  }
-  nav {
+}
+
+nav {
     height: 70px;
     display: flex;
     align-items: center;
@@ -52,19 +58,15 @@ h2{
     width: 100%;
     transition: top 0.3s;
     z-index: 10;
+}
 
-  }
-  nav div {
+nav div {
     display: flex;
-  }
-
-
+}
 
 .tab {
     overflow: hidden;
 }
-
-
 
 .tab button {
     background-color: inherit;
@@ -76,22 +78,16 @@ h2{
     transition: 0.3s;
     font-size: 17px;
     color: #333;
-
 }
-
-
 
 .tab button:hover {
     background-color: #ddd;
 }
 
-
-
 .tab button.active {
     border-style: solid;
     border-radius: 100px
 }
-
 
 .tabcontent {
     display: none;
@@ -101,9 +97,10 @@ h2{
     font-family: 'Trykker', serif;
 }
 
-.tabcontent.active{
+.tabcontent.active {
     display: block;
 }
+
 #test {
     display: block;
     margin: 0 auto;
@@ -112,56 +109,33 @@ h2{
     background-repeat: no-repeat;
     height: 100vh;
     width: 850px;
-    filter:grayscale(30%);
+    filter: grayscale(30%);
 }
+
 #test1 p {
     text-align: center;
     margin-top: 200px;
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0);
     font-family: 'Arvo', serif;
-
 }
-/* #test1{
-    display: block;
-    margin: 0 auto;
-    height: 100vh;
-    width: 850px;
-    background-color: black;
-} */
-
-/* .test1 {
-
-    background-color: #e0e0e0;
-} */
-
 
 table {
     width: 100%;
     border-collapse: collapse;
-
 }
-
-/* .collectorImg {
-  max-width: 300px;
-  float: left;
-  margin-right: 20px;
-} */
 
 main th {
     padding-bottom: 20px;
     padding-right: 20px;
-         border-bottom: solid;
-        border-color: #e0e0e0; 
-        /* border-radius: 5px; */
-        color: #333;
-        text-align: center;
-        /* gap: 10px; */
-        font-family: 'Arvo', serif;
-        
+    border-bottom: solid;
+    border-color: #e0e0e0;
+    color: #333;
+    text-align: center;
+    font-family: 'Arvo', serif;
 }
 
-main td{
+main td {
     font-size: small;
     text-align: center;
     color: #333;
@@ -177,95 +151,76 @@ div#collectorNav {
     display: grid;
     grid-template-columns: auto auto auto;
 }
-/* #clothesTable tr:nth-child(odd) {
-    background: #f5f5f5;
+
+table tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
-#foodTable tr:nth-child(odd) {
-    background: #f5f5f5;
-}
-#shelterTable tr:nth-child(odd) {
-    background: #f5f5f5;
-} */
-table tr:hover{
-    background-color:rgba(0, 0, 0, 0.1);
-}
+
 table tr {
     border-bottom: solid #e0e0e0;
-
 }
-.hover:hover{
+
+.hover:hover {
     background: none;
 }
 
-.tablinks{
+.tablinks {
     display: flex;
     text-align: center;
     justify-content: space-between;
     align-items: center;
-
 }
-.tab{
+
+.tab {
     text-align: center;
     justify-content: space-between;
     align-items: center;
-
 }
-/* table tr:hover{
-    box-shadow: 0px 15px 20px #74c69d;
-  color: #fff;
-  transform: translateY(-7px);
-}
-table tr th:hover{
-    box-shadow: none; */
-    
 
-    #shelterTable tr td:last-child:hover {
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-        color: #74c69d;
-        font-weight: bold;
-    }
+#foodTable tr td:last-child:hover {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #74c69d;
+    font-weight: bold;
+}
 
 #clothesTable tr td:last-child:hover {
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    
     color: #74c69d;
+    font-weight: bold;
 }
-#foodTable tr td:last-child:hover {
+
+#shelterTable tr td:last-child:hover {
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-   
     color: #74c69d;
+    font-weight: bold;
 }
 
 button.tablinks {
-    /* display: flex; */
-    /* text-align: center;
-    justify-content: space-between; */
     margin-right: 130px;
     margin-left: 60px;
     font-size: x-large;
-    /* font-family: cursive; */
-    color: #02a95c;    
-    
+    color: #02a95c;
 }
 
-
-main button{
+main button {
     border-style: solid;
     border-radius: 20px;
 }
 
-button.tablinks:hover{
+button.tablinks:hover {
     border-radius: 100px;
-    background-color:#02a95c;
+    background-color: #02a95c;
     color: white;
     transition: ease .7s;
 }
 
-main{
+main {
     text-align: center;
 }
 
@@ -273,76 +228,26 @@ main p {
     text-align: center;
     font-size: 20px;
     margin: 20px;
-    /* font-family:cursive; */
     color: #333;
-
-
 }
 
-#food{
+#food {
     border: double;
     border-color: #e0e0e0;
     border-radius: 20px;
 }
-#clothes{border: double;
+
+#clothes {
+    border: double;
     border-color: #e0e0e0;
-    border-radius: 20px;}
-#shelter{border: double;
+    border-radius: 20px;
+}
+
+#shelter {
+    border: double;
     border-color: #eee;
-    border-radius: 20px;}
-
-
-/* .parent {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 0px;
-    padding: 30px 30px;
-    
+    border-radius: 20px;
 }
-
-.div2 {
-    grid-area: 1 / 3 / 6 / 2;
-    line-height: 30px;
-}
-
-.div3 {
-    grid-area: 1 / 5 / 5 / 7;
-}
-
-.parent h2 {
-    font-size: 22px;
-    margin-bottom: 40px;
-}
-
-.parent div i {
-    margin-right: 10px;
-    margin-bottom: 30px;
-}
-
-#bottom__form {
-    width: 100%;
-}
-
-#bottom__form input {
-    display: block;
-    width: 65%;
-    border-radius: 50px;
-    height: 30px;
-    margin-bottom: 50px;
-}
-
-::placeholder {
-    padding: 10px 0px;
-    text-align: center;
-}
-
-.copyright {
-    padding: 25px;
-    text-align: center;
-    background: #f1f1ee;
-} */
 
 .parent {
     display: grid;
@@ -350,24 +255,24 @@ main p {
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 0px;
-    padding: 30px 30px;  
-    color: #333; 
+    padding: 30px 30px;
+    color: #333;
     font-family: 'Trykker', serif;
-
 }
-footer{
-    border:outset;
+
+footer {
+    border: outset;
     border-color: #f1f1ee;
     margin-top: 30px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-family: 'Merriweather', serif;
-
 }
-footer button{
+
+footer button {
     width: 100px;
     height: 30px;
-    background-color:white;
+    background-color: white;
     border-radius: 45px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
@@ -376,22 +281,16 @@ footer button{
     color: #333;
     border-color: #40916c;
     font-family: 'Trykker', serif;
+}
 
-    }
-  
 footer button:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
-  }
-
-
-
-
+}
 
 .div2 {
-
     grid-area: 1 / 4 / 4 / 1;
     line-height: 1.5;
 }
@@ -432,11 +331,40 @@ footer button:hover {
     padding: 25px;
     text-align: center;
     background: #f1f1ee;
-    color: #333
     font-family: 'Trykker', serif;
-}
-input[ type='text']{
-    border-color:#40916c ;
+    color: #333
 }
 
+input[ type='text'] {
+    border-color: #40916c;
+}
 
+div#food {
+    animation: formeFood 2s;
+}
+
+@keyframes formeFood {
+    from {
+        margin-right: -800%;
+    }
+}
+
+div#clothes {
+    animation: formeClothes 2s;
+}
+
+@keyframes formeClothes {
+    from {
+        margin-right: -800%;
+    }
+}
+
+div#shelter {
+    animation: formeShelter 2s;
+}
+
+@keyframes formeShelter {
+    from {
+        margin-right: -800%;
+    }
+}
