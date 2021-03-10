@@ -47,6 +47,7 @@ nav ul li {
 ul li a:hover {
   background: transparent;
   transition: 0.6s ease;
+  transition-delay: 0.1s;
   border: 1px solid #02a95c;
 }
 nav ul li a {
@@ -56,6 +57,9 @@ nav ul li a {
 nav ul li a:visited {
   text-decoration: none;
   color: #fff;
+}
+nav ul li a:visited:hover {
+  color: #02a95c;
 }
 .hover-scrolled {
   color: #fff !important;
@@ -117,7 +121,7 @@ nav div h1 {
   font-weight: 600;
 }
 .logospan {
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 /* h1 span {
   color: #02a95c;
@@ -224,6 +228,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
 .arrow__conatainer:hover {
   background-color: rgba(2, 169, 92, 1);
   transition: 0.6s ease-in-out;
+  transition-delay: 0.1s;
 }
 .arrow__conatainer2 {
   width: 40px;
@@ -241,6 +246,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
   border: 2px solid rgba(2, 169, 92, 1);
   background: white;
   transition: ease-in-out 0.6s;
+  transition-delay: 0.1s;
 }
 .arrow:hover {
   cursor: pointer;
@@ -251,6 +257,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
 
 .fa-2x {
   color: #02a95c;
+  font-size: 1em !important;
 }
 
 .grid-flex-item {
@@ -330,6 +337,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
 .goals__item1:hover {
   transform: scale(1.05) translateZ(0);
   transition: 0.5s ease-in;
+  transition-delay: 0.1s;
 }
 
 .goals__item1 h2 {
@@ -355,6 +363,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
   /* margin: 50px 50px; */
   border-radius: 20px;
   transition: box-shadow 0.2s ease-in-out;
+  transition-delay: 0.1s;
   box-shadow: 0 0 8px 0 rgb(17 22 26 / 16%), 0 4px 8px 0 rgb(17 22 26 / 8%),
     0 8px 16px 0 rgb(17 22 26 / 8%);
   padding: 25px 25px;
@@ -362,6 +371,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
 .goals__item2:hover {
   transform: scale(1.05) translateZ(0);
   transition: 0.5s ease-in;
+  transition-delay: 0.1s;
 }
 
 .goals__item2 h2 {
@@ -394,6 +404,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
 .goals__item3:hover {
   transform: scale(1.05) translateZ(0);
   transition: 0.5s ease-in;
+  transition-delay: 0.1s;
 }
 
 .goals__item3 h2 {
@@ -419,6 +430,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
   /* margin: 50px 50px; */
   border-radius: 20px;
   transition: box-shadow 0.2s ease-in-out;
+  transition-delay: 0.1s;
   box-shadow: 0 0 8px 0 rgb(17 22 26 / 16%), 0 4px 8px 0 rgb(17 22 26 / 8%),
     0 8px 16px 0 rgb(17 22 26 / 8%);
   padding: 25px 25px;
@@ -427,6 +439,7 @@ background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,
 .goals__item4:hover {
   transform: scale(1.05) translateZ(0);
   transition: 0.5s ease-in;
+  transition-delay: 0.1s;
   /* transition: filter 200ms linear, transform 200ms linear; */
 }
 
@@ -506,6 +519,7 @@ legend {
   color: #fff;
   background-color: #037b44;
   transition: 0.6s ease;
+  transition-delay: 0.1s;
 }
 /* .parent h2 {
   font-size: 22px;
@@ -758,6 +772,7 @@ li button {
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  transition-delay: 0.1s;
 }
 .active {
   background-color: #02a95c;
@@ -784,6 +799,7 @@ li button {
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  transition-delay: 0.1s;
 }
 
 @keyframes fade {
